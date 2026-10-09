@@ -50,20 +50,21 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v7
+      # Makes this checkout the tap nomunomu0504/tap (and resets it, so the new formula
+      # comes after).
+      - uses: Homebrew/actions/setup-homebrew@main
       - uses: actions/download-artifact@v8
         with:
           name: formula
           path: Formula
-      - uses: Homebrew/actions/setup-homebrew@main
-      - name: Install from this checkout
+      - name: Install the new formula
+        env:
+          VERSION: ${{ needs.formula.outputs.version }}
         run: |
-          # Homebrew installs formulae from taps only; this checkout becomes the tap.
-          tap="$(brew --repository)/Library/Taps/nomunomu0504/homebrew-tap"
-          rm -rf "$tap" && mkdir -p "$(dirname "$tap")" && cp -R "$GITHUB_WORKSPACE" "$tap"
           brew style nomunomu0504/tap/ssp
           brew install nomunomu0504/tap/ssp
           brew test nomunomu0504/tap/ssp
-          ssp --version
+          ssp --version | tee /dev/stderr | grep -qx "ssp $VERSION"
 
   commit:
     needs: [formula, test]
