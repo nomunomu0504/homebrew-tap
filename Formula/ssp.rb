@@ -2,29 +2,29 @@
 class Ssp < Formula
   desc "Shows clocks, dashboards, web pages and videos on USB bar displays"
   homepage "https://subscreen.dev"
-  version "0.7.1"
+  version "0.8.0"
   license any_of: ["MIT", "Apache-2.0"]
 
   # One universal binary for both kinds of Mac.
   on_macos do
     on_arm do
-      url "https://github.com/nomunomu0504/sub-screen-player/releases/download/v0.7.1/ssp-v0.7.1-universal-apple-darwin.tar.gz"
-      sha256 "95be90eaad0203a9091712aef3bf9df71b101fd9e77e8221733f66d2eeb26076"
+      url "https://github.com/nomunomu0504/sub-screen-player/releases/download/v0.8.0/ssp-v0.8.0-universal-apple-darwin.tar.gz"
+      sha256 "dff097d12a61156b5715edf48fd2e1427a0a503963323876b58a31d3d82f589c"
     end
     on_intel do
-      url "https://github.com/nomunomu0504/sub-screen-player/releases/download/v0.7.1/ssp-v0.7.1-universal-apple-darwin.tar.gz"
-      sha256 "95be90eaad0203a9091712aef3bf9df71b101fd9e77e8221733f66d2eeb26076"
+      url "https://github.com/nomunomu0504/sub-screen-player/releases/download/v0.8.0/ssp-v0.8.0-universal-apple-darwin.tar.gz"
+      sha256 "dff097d12a61156b5715edf48fd2e1427a0a503963323876b58a31d3d82f589c"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/nomunomu0504/sub-screen-player/releases/download/v0.7.1/ssp-v0.7.1-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "5811635752eda2d27751a0342af74d7a37cf197c6b41eb7e957154275ac94614"
+      url "https://github.com/nomunomu0504/sub-screen-player/releases/download/v0.8.0/ssp-v0.8.0-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "33b730390fefba30e6b1bcc55864fb2a8c3a953bdb9dd6a39976617194c00763"
     end
     on_intel do
-      url "https://github.com/nomunomu0504/sub-screen-player/releases/download/v0.7.1/ssp-v0.7.1-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "c496dd8a819894bf8b285edc049d80382ab569b69bc5fbba08985b3f8e8495c4"
+      url "https://github.com/nomunomu0504/sub-screen-player/releases/download/v0.8.0/ssp-v0.8.0-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "3d2acaea2f45fb46e70153cfb24408344d01ee802e378452cb042d0145ac6323"
     end
   end
 
